@@ -1,0 +1,2 @@
+class Horse < Animal
+end

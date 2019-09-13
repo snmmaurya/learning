@@ -1,0 +1,2 @@
+class Lion < Animal
+end
