@@ -3,8 +3,12 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
 
   def index
-    @animals = type_class.all
-    render json: @animals.map {|animal| {name: animal.name, type: animal.type}}
+    authenticate_or_request_with_http_digest do |username|
+      # binding.pry
+      true
+    end
+    # @animals = type_class.all
+    # render json: @animals.map {|animal| {name: animal.name, type: animal.type}}
   end
 
   def show
@@ -46,6 +50,10 @@ class AnimalsController < ApplicationController
 
     def animal_params
       params.permit(:name)
+    end
+
+    def new_animal_params
+      params.fetch(:animal, {}).permit(:name)
     end
 
     def set_animal

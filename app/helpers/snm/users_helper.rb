@@ -1,0 +1,2 @@
+module Snm::UsersHelper
+end

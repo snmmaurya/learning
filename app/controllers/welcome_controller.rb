@@ -4,12 +4,14 @@ class WelcomeController < ApplicationController
   around_action :filter
 
   def index
-    
+  	# binding.pry
+    render json: {status: "Okay"}
   end
+
+  
 
 
   private
     def filter
-      binding.pry
     end
 end

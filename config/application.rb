@@ -1,5 +1,4 @@
 require_relative 'boot'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -14,5 +13,7 @@ module Learning
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    enable_dependency_loading = true
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
